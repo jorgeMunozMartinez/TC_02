@@ -1,6 +1,8 @@
 package Persistencia;
 import java.util.ArrayList;
 
+import org.w3c.dom.ls.LSInput;
+
 /**
  * 
  * Una accion viene identificada por la posicion X e Y de la accion el coste de realizar la accion y una lista donde estan 
@@ -48,6 +50,12 @@ public class Accion {
 	}
 	public void setListaDistribucion(ArrayList<DistribucionTerreno> listaDistribucion) {
 		this.listaDistribucion = listaDistribucion;
+	}
+	public int getNumListDistrib() {
+		return listaDistribucion.size();
+	}
+	public DistribucionTerreno getDist(int id) {
+		return listaDistribucion.get(id);
 	}
 	@Override
 	public String toString() {

@@ -1,9 +1,17 @@
 package Dominio;
-
+/**
+ *
+ *Contiene los menus que se usan en la relizacion de la practica 
+ * 
+ * @author Jorge
+ * 
+ * @version 1.0
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import Persistencia.Ficheros;
+import Persistencia.Problema;
 
 public class Menus {
 
@@ -57,5 +65,36 @@ public class Menus {
 			estado = new GenerarEstados(contenido);
 			break;
 		}
+	}
+
+	public void MenusEstrategias(Problema problema) {
+		Scanner TECLADO = new Scanner(System.in);
+		int opcion = 1;
+		try {
+			System.out.println("----Estrategias disponibles----");
+			System.out.println(
+					" 1-Prondidad Simple \n 2-Profundidad Acotada \n 3-Anchura \n 4-Costo Uniforme \n 5-Asterisco");
+			opcion = TECLADO.nextInt();
+			switch (opcion) {
+			case 1:	
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			default:
+				System.out.println("**Error con los valores de entrada, parámetos permitidos 1, 2, 3, 4, 5**\n");
+				MenusEstrategias(problema);
+				break;
+			}
+		} catch (Exception e) {
+			System.out.println("**Error con los valores de entrada, parámetos permitidos 1, 2, 3, 4, 5**\n");
+			MenusEstrategias(problema);
+		}
+		
 	}
 }
