@@ -1,31 +1,33 @@
 package Persistencia;
 
+import java.util.ArrayList;
+
 public class Estado {
 
-	private Posicion [][] terreno;
 	private int posX;
 	private int posY;
 	private int V;
 	private int k;
 	private int max;
+	private Posicion Terreno[][];
 	
-	public Estado(Posicion[][] terreno, int posX,int posY,int V, int k, int max) {
-		this.terreno=terreno;
-		this.posX=posX;
-		this.posY=posY;
-		this.V=V;
-		this.k=k;
-		this.max=max;
+	public Estado (ArrayList<Integer> datos,Posicion Terreno[][]) {
+		this.posX=datos.get(0);
+		this.posY=datos.get(1);
+		this.V=datos.get(4);
+		this.k=datos.get(3);
+		this.max=datos.get(2);
+		this.Terreno=Terreno;
 	}
+	
+	
 
 	public Posicion[][] getTerreno() {
-		return terreno;
+		return Terreno;
 	}
-
 	public void setTerreno(Posicion[][] terreno) {
-		this.terreno = terreno;
+		Terreno = terreno;
 	}
-
 	public int getPosX() {
 		return posX;
 	}
@@ -66,6 +68,16 @@ public class Estado {
 		this.max = max;
 	}
 	
-	
+	public boolean sonIguales(Estado e) {
+		boolean iguales = true;
+		if ((e.getPosX()!= getPosX()) || (e.getPosY() != getPosY()))
+			iguales = false;
+		for (int i = 0; i < getTerreno().length || !iguales; i++) {
+			for (int j = 0; j < getTerreno().length || !iguales; j++) {
+				iguales = getTerreno()[i][j].equals(e.getTerreno()[i][j]);
+			}
+		}
+		return iguales;
+	}
 	
 }

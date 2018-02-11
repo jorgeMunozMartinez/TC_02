@@ -1,5 +1,13 @@
 package Persistencia;
-
+/**
+ * 
+ * Genera un sicesor con una accion, estado y el coste 
+ * 
+ * @author Jorge
+ *
+ *@version 1.0
+ *
+ */
 public class Sucesor {
 	
 	private Accion accion;

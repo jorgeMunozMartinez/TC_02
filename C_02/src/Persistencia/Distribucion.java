@@ -9,13 +9,13 @@ package Persistencia;
  *
  */
 
-public class DistribucionTerreno {
+public class Distribucion {
 	
 	private int posX;
 	private int posY;
 	private int arena;
 	
-	public DistribucionTerreno(int posX, int posY, int arena) {
+	public Distribucion(int posX, int posY, int arena) {
 		this.posX = posX;
 		this.posY = posY;
 		this.arena = arena;

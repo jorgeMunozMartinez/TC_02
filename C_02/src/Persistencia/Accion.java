@@ -18,10 +18,10 @@ public class Accion {
 	
 	private int posX;
 	private int posY;
-	private int coste;
-	private ArrayList<DistribucionTerreno> listaDistribucion = new ArrayList<DistribucionTerreno>();
+	private int coste;//coste o tierra, depende de donde se usa 
+	private ArrayList<Distribucion> listaDistribucion = new ArrayList<Distribucion>();
 		
-	public Accion(int posX, int posY, int coste, ArrayList<DistribucionTerreno> listaDistribucion) {
+	public Accion(int posX, int posY, int coste, ArrayList<Distribucion> listaDistribucion) {
 		this.posX = posX;
 		this.posY = posY;
 		this.coste = coste;
@@ -45,16 +45,16 @@ public class Accion {
 	public void setCoste(int coste) {
 		this.coste = coste;
 	}
-	public ArrayList<DistribucionTerreno> getListaDistribucion() {
+	public ArrayList<Distribucion> getListaDistribucion() {
 		return listaDistribucion;
 	}
-	public void setListaDistribucion(ArrayList<DistribucionTerreno> listaDistribucion) {
+	public void setListaDistribucion(ArrayList<Distribucion> listaDistribucion) {
 		this.listaDistribucion = listaDistribucion;
 	}
 	public int getNumListDistrib() {
 		return listaDistribucion.size();
 	}
-	public DistribucionTerreno getDist(int id) {
+	public Distribucion getDist(int id) {
 		return listaDistribucion.get(id);
 	}
 	@Override

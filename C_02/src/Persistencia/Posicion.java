@@ -1,5 +1,7 @@
 package Persistencia;
 
+import java.util.ArrayList;
+
 /**
  * 
  * Se indica la poscion X e Y actual asi como la tierra que hay en esa posicion
@@ -15,12 +17,22 @@ public class Posicion {
 	private int posX;
 	private int posY;
 	private int tierra;
+	private ArrayList<Distribucion> listaDistribucion = new ArrayList<Distribucion>();
 	private boolean visitado;
 
-	public Posicion(int posX, int posY, int tierra) {
+	public Posicion(int posX, int posY, int tierra, ArrayList<Distribucion> listaDistribucion) {
 		this.posX = posX;
 		this.posY = posY;
 		this.tierra = tierra;
+		this.listaDistribucion = listaDistribucion;
+	}
+
+	public ArrayList<Distribucion> getListaDistribucion() {
+		return listaDistribucion;
+	}
+
+	public void setListaDistribucion(ArrayList<Distribucion> listaDistribucion) {
+		this.listaDistribucion = listaDistribucion;
 	}
 
 	public int getPosX() {

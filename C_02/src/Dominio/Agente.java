@@ -6,12 +6,12 @@ import Persistencia.Problema;
 
 public class Agente {
 
-	Estado estado = new Estado(null,0,0,0,0,0);
+	Estado estado = new Estado(null,null);
 	EspacioDeEstados espacioEstados = new EspacioDeEstados();
 	
 	public Agente() {
 		Menus m = new Menus();
-		Problema problema = new Problema(espacioEstados,estado);
+		GenerarProblema problema = new GenerarProblema(espacioEstados,estado);
 		m.MenusEstrategias(problema);
 		
 	}
