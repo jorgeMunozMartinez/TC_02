@@ -1,5 +1,7 @@
 package Persistencia;
 
+import Dominio.GenerarEstados;
+
 /**
  * 
  * Crea los nodos y los asocia a un padre si hay asignado una coste y una
@@ -20,7 +22,7 @@ public class Nodo {
 	private int valor;
 
 	public Nodo(int profundidad, int costo, Estado estado, Nodo padre, Accion accion, int valor) {
-		profundidad = padre.getProfundidad() + 1;
+		this.profundidad = profundidad;
 		this.costo = costo;
 		this.estado = estado;
 		this.padre = padre;
@@ -75,4 +77,11 @@ public class Nodo {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
+
+	@Override
+	public String toString() {
+		return "[profundidad=" + profundidad + ", costo=" + costo + ", estado=" + estado + ", padre=" + padre
+				+ ", accion=" + accion + ", valor=" + valor + "]";
+	}
+	
 }

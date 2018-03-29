@@ -12,13 +12,16 @@ public class GenerarTerreno {
 	private int maximo;
 	private int k;
 	private int v;
-
-	public Posicion[][] GenerarElTerreno(ArrayList<Integer> datosParaTerreno) {
+	
+	public GenerarTerreno(ArrayList<Integer> datosParaTerreno) {
 		filas = datosParaTerreno.get(0);
 		columnas = datosParaTerreno.get(1);
 		maximo = datosParaTerreno.get(2);
 		k = datosParaTerreno.get(3);
 		v = filas * columnas * k;
+	}
+
+	public Posicion[][] GenerarElTerreno() {
 		Posicion[][] Terreno = new Posicion[filas][columnas];
 		GenerarVecinos(filas, columnas, Terreno);
 		return Terreno;
@@ -68,16 +71,6 @@ public class GenerarTerreno {
 		return vecinos;
 	}
 
-	public String[][] CopiarTerreno(Posicion Terreno[][], String TerrenoString[][]) {
-		TerrenoString= new String[filas][columnas];
-		for (int i = 0; i < Terreno.length; i++) {
-			for (int j = 0; j < Terreno[i].length; j++) {
-				TerrenoString[i][j] = "" + Terreno[i][j].getTierra();
-			}
-		}
-		return TerrenoString;
-	}
-
 	public void MostrarTerreno(Posicion[][] TerrenoString) {
 		System.out.println("--Terreno--");
 		for (int i = 0; i < TerrenoString.length; i++) {
@@ -89,27 +82,6 @@ public class GenerarTerreno {
 		}
 	}
 
-	public void MostrarTerrenoTractor(String[][] TerrenoString, int X, int Y) {
-		System.out.println("--Terreno--");
-		for (int i = 0; i < TerrenoString.length; i++) {
-			System.out.print("|");
-			for (int j = 0; j < TerrenoString[i].length; j++) {
-				if (i == X && j == Y) {
-					if (TerrenoString[i][j].length() == 1) {
-						System.out.print(" |" + TerrenoString[i][j] + "| ");
-					} else {
-						System.out.print("|" + TerrenoString[i][j] + " |");
-					}
-				} else {
-					if (TerrenoString[i][j].length() == 1) {
-						System.out.print("  " + TerrenoString[i][j] + "  ");
-					} else {
-						System.out.print(" " + TerrenoString[i][j] + "  ");
-					}
-				}
-			}
-			System.out.println("|");
-		}
-	}
+	
 
 }

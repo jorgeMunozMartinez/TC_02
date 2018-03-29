@@ -67,6 +67,12 @@ public class Posicion {
 		this.visitado = visitado;
 	}
 
+	@Override
+	public String toString() {
+		return "[posX=" + posX + ", posY=" + posY + ", tierra=" + tierra + ", listaDistribucion="
+				+ listaDistribucion + ", visitado=" + visitado + "]";
+	}
+
 	public boolean equals(Posicion pos) {
 		Posicion p = pos;
 		if (tierra == p.getTierra()) {

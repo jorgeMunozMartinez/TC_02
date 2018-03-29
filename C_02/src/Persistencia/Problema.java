@@ -25,6 +25,4 @@ public class Problema {
 	public void setEspacioEstados(EspacioDeEstados espacioEstados) {
 		this.espacioEstados = espacioEstados;
 	}
-	
-	
 }

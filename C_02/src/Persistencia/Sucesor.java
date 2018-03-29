@@ -43,5 +43,11 @@ public class Sucesor {
 	public void setCoste(int coste) {
 		this.coste = coste;
 	}
+
+	@Override
+	public String toString() {
+		return "[accion=" + accion + ", estado=" + estado + ", coste=" + coste + "]";
+	}
+	
 	
 }

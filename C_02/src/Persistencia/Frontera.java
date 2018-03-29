@@ -15,8 +15,8 @@ public class Frontera {
 
 	private PriorityQueue<Nodo> fronteraCola;
 
-	public Frontera(PriorityQueue<Nodo> fronteraCola) {
-		this.fronteraCola = fronteraCola;
+	public Frontera() {
+		fronteraCola=new PriorityQueue<Nodo>();
 	}
 
 	public PriorityQueue<Nodo> getFronteraCola() {
@@ -33,6 +33,10 @@ public class Frontera {
 	public Nodo eliminarNodo() {
 		Nodo n = this.fronteraCola.poll();
 		return n;
+	}
+	
+	public int getFronteraSize() {
+		return fronteraCola.size();
 	}
 	
 	public boolean esVacia() {
